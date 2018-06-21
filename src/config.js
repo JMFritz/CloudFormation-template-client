@@ -1,4 +1,5 @@
 export default {
+  MAX_ATTACHMENT_SIZE: 50000000,
   s3: {
     REGION: "us-east-1",
     BUCKET: "cf-templates-app-uploads"
