@@ -3,6 +3,7 @@ import { API, Storage } from "aws-amplify";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import config from "../config";
+import { s3Upload } from "../libs/awsLib";
 import "./styles/Templates.css";
 
 export default class Templates extends Component {
@@ -32,7 +33,6 @@ export default class Templates extends Component {
       if (attachment) {
         attachmentURL = await Storage.vault.get(attachment);
       }
-
       if (diagram) {
         diagramURL = await Storage.vault.get(diagram);
       }
@@ -70,22 +70,61 @@ export default class Templates extends Component {
     this.file = event.target.files[0];
   }
 
+  handleDiagramChange = event => {
+    this.diagram = event.target.files[0];
+  }
+
+  saveTemplate(template) {
+    return API.put("templates", `/templates/${this.props.match.params.id}`, { body: template });
+  }
+
   handleSubmit = async event => {
+    let attachment;
+    let diagram;
+
     event.preventDefault();
 
     if (this.file && this.file.size > config.MAX_ATTACHMENT_SIZE) {
-      alert("Please pick a file smaller than 5MB");
+      alert("Please pick a template smaller than 50MB");
+      return;
+    } else if (this.diagram && this.diagram.size > config.MAX_ATTACHMENT_SIZE) {
+      alert("Please pick a diagram smaller than 50MB");
       return;
     }
 
     this.setState({ isLoading: true });
+
+    try {
+      if (this.file) {
+        let a1 = await Storage.vault.remove(this.state.template.attachment);
+        attachment = await s3Upload(this.file);
+      }
+      if (this.diagram) {
+        let d1 = await Storage.vault.remove(this.state.template.diagram);
+        diagram = await s3Upload(this.diagram);
+      }
+
+      await this.saveTemplate({
+        content: this.state.content,
+        attachment: attachment || this.state.template.attachment,
+        diagram: diagram || this.state.template.diagram
+      });
+      this.props.history.push("/");
+    } catch(e) {
+      alert(e);
+      this.setState({ isLoading: false });
+    }
+  }
+
+  deleteTemplate() {
+    return API.del("templates", `/templates/${this.props.match.params.id}`);
   }
 
   handleDelete = async event => {
     event.preventDefault();
 
     const confirmed = window.confirm(
-      "Are you sure you want to delete this template?"
+      "Are you sure you want to delete this note?"
     );
 
     if (!confirmed) {
@@ -93,6 +132,16 @@ export default class Templates extends Component {
     }
 
     this.setState({ isDeleting: true });
+
+    try {
+      let a1 = await Storage.vault.remove(this.state.template.attachment);
+      let d1 = await Storage.vault.remove(this.state.template.diagram);
+      await this.deleteTemplate();
+      this.props.history.push("/");
+    } catch (e) {
+      alert(e);
+      this.setState({ isDeleting: false });
+    }
   }
 
   render() {
@@ -144,7 +193,7 @@ export default class Templates extends Component {
             <FormGroup controlId="diagram">
               {!this.state.template.diagram &&
                 <ControlLabel>Diagram</ControlLabel>}
-              <FormControl onChange={this.handleFileChange} type="file" />
+              <FormControl onChange={this.handleDiagramChange} type="file" />
             </FormGroup>
             <LoaderButton
               block
