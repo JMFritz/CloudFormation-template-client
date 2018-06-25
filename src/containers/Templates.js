@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API, Storage } from "aws-amplify";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { FormGroup, FormControl, ControlLabel, Image } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import config from "../config";
 import { s3Upload } from "../libs/awsLib";
@@ -124,7 +124,7 @@ export default class Templates extends Component {
     event.preventDefault();
 
     const confirmed = window.confirm(
-      "Are you sure you want to delete this note?"
+      "Are you sure you want to delete this template?"
     );
 
     if (!confirmed) {
@@ -156,27 +156,7 @@ export default class Templates extends Component {
                 componentClass="textarea"
               />
             </FormGroup>
-            {this.state.template.attachment &&
-              <FormGroup>
-                <ControlLabel>Attachment</ControlLabel>
-                <FormControl.Static>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={this.state.attachmentURL}
-                  >
-                    {this.formatFilename(this.state.template.attachment)}
-                  </a>
-                </FormControl.Static>
-              </FormGroup>}
-            <FormGroup controlId="file">
-              {!this.state.template.attachment &&
-                <ControlLabel>Attachment</ControlLabel>}
-              <FormControl onChange={this.handleFileChange} type="file" />
-            </FormGroup>
-
-
-
+            <Image src={this.state.diagramURL} responsive />
             {this.state.template.diagram &&
               <FormGroup>
                 <ControlLabel>Diagram</ControlLabel>
@@ -194,6 +174,25 @@ export default class Templates extends Component {
               {!this.state.template.diagram &&
                 <ControlLabel>Diagram</ControlLabel>}
               <FormControl onChange={this.handleDiagramChange} type="file" />
+            </FormGroup>
+
+            {this.state.template.attachment &&
+              <FormGroup>
+                <ControlLabel>Attachment</ControlLabel>
+                <FormControl.Static>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={this.state.attachmentURL}
+                  >
+                    {this.formatFilename(this.state.template.attachment)}
+                  </a>
+                </FormControl.Static>
+              </FormGroup>}
+            <FormGroup controlId="file">
+              {!this.state.template.attachment &&
+                <ControlLabel>Attachment</ControlLabel>}
+              <FormControl onChange={this.handleFileChange} type="file" />
             </FormGroup>
             <LoaderButton
               block
