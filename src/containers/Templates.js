@@ -19,7 +19,9 @@ export default class Templates extends Component {
       template: null,
       content: "",
       attachmentURL: null,
-      diagramURL: null
+      diagramURL: null,
+      editTemplateFile: false,
+      editDiagramFile: false
     };
   }
 
@@ -149,14 +151,9 @@ export default class Templates extends Component {
       <div className="Templates">
         {this.state.template &&
           <form onSubmit={this.handleSubmit}>
-            <FormGroup controlId="content">
-              <FormControl
-                onChange={this.handleChange}
-                value={this.state.content}
-                componentClass="textarea"
-              />
-            </FormGroup>
-            <Image src={this.state.diagramURL} responsive />
+            <div className="diagramImage">
+              <Image src={this.state.diagramURL} responsive />
+            </div>
             {this.state.template.diagram &&
               <FormGroup>
                 <ControlLabel>Diagram</ControlLabel>
@@ -175,25 +172,37 @@ export default class Templates extends Component {
                 <ControlLabel>Diagram</ControlLabel>}
               <FormControl onChange={this.handleDiagramChange} type="file" />
             </FormGroup>
-
-            {this.state.template.attachment &&
-              <FormGroup>
-                <ControlLabel>Attachment</ControlLabel>
-                <FormControl.Static>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={this.state.attachmentURL}
-                  >
-                    {this.formatFilename(this.state.template.attachment)}
-                  </a>
-                </FormControl.Static>
-              </FormGroup>}
-            <FormGroup controlId="file">
-              {!this.state.template.attachment &&
-                <ControlLabel>Attachment</ControlLabel>}
-              <FormControl onChange={this.handleFileChange} type="file" />
-            </FormGroup>
+          <div className="secondRow">
+            <div className="attachment">
+              {this.state.template.attachment &&
+                <FormGroup>
+                  <ControlLabel id="templateLabel">Template</ControlLabel>
+                  <FormControl.Static>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={this.state.attachmentURL}
+                      >
+                      {this.formatFilename(this.state.template.attachment)}
+                    </a>
+                  </FormControl.Static>
+                </FormGroup>}
+                <FormGroup className="fileInput" controlId="file">
+                  {!this.state.template.attachment &&
+                    <ControlLabel>Template</ControlLabel>}
+                      <FormControl onChange={this.handleFileChange} type="file" />
+                </FormGroup>
+            </div>
+            <div className="note">
+              <FormGroup controlId="content">
+                <FormControl
+                  onChange={this.handleChange}
+                  value={this.state.content}
+                  componentClass="textarea"
+                  />
+              </FormGroup>
+            </div>
+          </div>
             <LoaderButton
               block
               bsStyle="primary"
