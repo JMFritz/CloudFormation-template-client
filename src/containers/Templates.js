@@ -154,24 +154,26 @@ export default class Templates extends Component {
             <div className="diagramImage">
               <Image src={this.state.diagramURL} responsive />
             </div>
-            {this.state.template.diagram &&
-              <FormGroup>
-                <ControlLabel>Diagram</ControlLabel>
-                <FormControl.Static>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={this.state.diagramURL}
-                  >
-                    {this.formatFilename(this.state.template.diagram)}
-                  </a>
-                </FormControl.Static>
-              </FormGroup>}
-            <FormGroup controlId="diagram">
-              {!this.state.template.diagram &&
-                <ControlLabel>Diagram</ControlLabel>}
-              <FormControl onChange={this.handleDiagramChange} type="file" />
-            </FormGroup>
+            <div className="diagramFile">
+              {this.state.template.diagram &&
+                <FormGroup>
+                  <ControlLabel>Environment Diagram</ControlLabel>
+                  <FormControl.Static>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={this.state.diagramURL}
+                      >
+                      {this.formatFilename(this.state.template.diagram)}
+                    </a>
+                  </FormControl.Static>
+                </FormGroup>}
+                <FormGroup controlId="diagram">
+                  {!this.state.template.diagram &&
+                    <ControlLabel>Diagram</ControlLabel>}
+                      <FormControl onChange={this.handleDiagramChange} type="file" />
+                    </FormGroup>
+            </div>
           <div className="secondRow">
             <div className="attachment">
               {this.state.template.attachment &&
@@ -206,7 +208,6 @@ export default class Templates extends Component {
             <LoaderButton
               block
               bsStyle="primary"
-              bsSize="large"
               disabled={!this.validateForm()}
               type="submit"
               isLoading={this.state.isLoading}
@@ -216,7 +217,6 @@ export default class Templates extends Component {
             <LoaderButton
               block
               bsStyle="danger"
-              bsSize="large"
               isLoading={this.state.isDeleting}
               onClick={this.handleDelete}
               text="Delete"

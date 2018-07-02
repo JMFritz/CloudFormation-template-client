@@ -37,18 +37,41 @@
   /* border: 1px solid black; */
 }
 
-.fileInput {
+/* .fileInput {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 #file{
   /* border: 1px solid black; */
   width: 80%;
   font-size: 12px;
 }
 
+#diagram{
+  /* border: 1px solid black; */
+  width: 80%;
+  font-size: 12px;
+  padding-left: 16px;
+}
+
 .diagramImage {
   max-width: 80%;
   margin: 0 auto;
+}
+
+.LoaderButton {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.diagramFile {
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+input[type=file] {
+    margin: 0 auto;
 }

@@ -32,9 +32,11 @@ Store your CloudFormation virtual environment templates, diagrams, and notes on 
 #### Main Page (after Sign-Up or Log-In)
 Screenshots currently unavailable
 
-#### Individual Environment View
+#### Individual Environment View (_Rough-Draft_)
 
-<img width="400" alt="screen shot 2018-07-02 at 10 24 14 am" src="https://user-images.githubusercontent.com/25647710/42177773-d521f6f4-7de2-11e8-869c-758c5b735027.png">
+<img width="450" alt="screen shot 2018-07-02 at 10 57 22 am" src="https://user-images.githubusercontent.com/25647710/42178878-c8f855fe-7de6-11e8-9447-8661a76794ea.png">
+
+
 
 ## Support and contact details
 
