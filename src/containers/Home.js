@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PageHeader, ListGroup, ListGroupItem, Jumbotron } from "react-bootstrap";
+import { PageHeader, ListGroup, ListGroupItem, Jumbotron, Row, Grid, Col } from "react-bootstrap";
 import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import "./styles/Home.css";
@@ -66,20 +66,30 @@ export default class Home extends Component {
 
   renderLander() {
     return (
-      <Jumbotron className="jumbotron">
-        <div className="lander">
-          <h1>CloudFormation Bin</h1>
-          <p><strong>Track and visualize virtual environment templates</strong></p>
-          <div>
-            <Link to="/login" className="btn btn-info btn-lg">
-              Login
-            </Link>
-            <Link to="/signup" className="btn btn-success btn-lg">
-              Signup
-            </Link>
+      <div className="homePage">
+        <Jumbotron className="jumbotron">
+          <div className="lander">
+            <h1>CloudFormation Bin</h1>
+            <p><strong>Track and visualize virtual environment templates</strong></p>
+            <div>
+              <Link to="/login" className="btn btn-info btn-lg">
+                Login
+              </Link>
+              <Link to="/signup" className="btn btn-success btn-lg">
+                Signup
+              </Link>
+            </div>
+          </div>
+        </Jumbotron>
+        <div className="content">
+          <div className="more">
+            more info
+          </div>
+          <div className="about">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
         </div>
-      </Jumbotron>
+      </div>
     );
   }
 

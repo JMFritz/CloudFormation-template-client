@@ -13,6 +13,10 @@
   color: #999;
 }
 
+.Home. .homePage {
+  width: 100%;
+}
+
 .Home .templates h4,h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -35,8 +39,33 @@
 
 .Home .jumbotron {
   background-image: url("../images/grid-background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-size: contain;
+}
+
+.Home .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.Home .about {
+  border: 2px solid red;
+  height: 20rem;
+  width: 70rem;
+  margin: .5rem;
+  text-align: center;
+  padding: 2rem;
+}
+.Home .more {
+  border: 2px solid green;
+  height: 20rem;
+  width: 20rem;
+  margin: .5rem;
+  flex-grow: 1;
+  text-align: center;
+  padding: 2rem;
 }
 
 .Home .template {
@@ -56,4 +85,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.Home .column1, .column2{
+  border: 2px solid black;
 }
