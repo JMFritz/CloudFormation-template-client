@@ -205,6 +205,7 @@ export default class Templates extends Component {
               </FormGroup>
             </div>
           </div>
+          <div className="optionButtons">
             <LoaderButton
               block
               bsStyle="primary"
@@ -213,7 +214,7 @@ export default class Templates extends Component {
               isLoading={this.state.isLoading}
               text="Save"
               loadingText="Saving…"
-            />
+              />
             <LoaderButton
               block
               bsStyle="danger"
@@ -221,7 +222,8 @@ export default class Templates extends Component {
               onClick={this.handleDelete}
               text="Delete"
               loadingText="Deleting…"
-            />
+              />
+          </div>
           </form>}
       </div>
     );

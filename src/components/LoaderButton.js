@@ -12,6 +12,7 @@ export default ({
 }) =>
   <Button
     className={`LoaderButton ${className}`}
+    bsSize="large"
     disabled={disabled || isLoading}
     {...props}
   >

@@ -3,7 +3,11 @@ import {
   HelpBlock,
   FormGroup,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Well,
+  Popover,
+  Button,
+  OverlayTrigger
 } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import { Auth } from "aws-amplify";
@@ -105,6 +109,14 @@ export default class Signup extends Component {
   }
 
   renderForm() {
+
+    const popoverHoverFocus = <Popover id="popover-trigger-hover-focus" title="Requirements">
+                                <p>At least 8 characters</p>
+                                <p>One Upper-Case character</p>
+                                <p>One Lower-Case character</p>
+                                <p>One Number</p>
+                                <p>One Special Character</p>
+                              </Popover>
     return (
       <form onSubmit={this.handleSubmit}>
         <FormGroup controlId="email" bsSize="large">
@@ -116,14 +128,20 @@ export default class Signup extends Component {
             onChange={this.handleChange}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl
-            value={this.state.password}
-            onChange={this.handleChange}
-            type="password"
-          />
-        </FormGroup>
+        <OverlayTrigger
+          trigger={['hover', 'focus']}
+          placement="right"
+          overlay={popoverHoverFocus}
+        >
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+        </OverlayTrigger>
         <FormGroup controlId="confirmPassword" bsSize="large">
           <ControlLabel>Confirm Password</ControlLabel>
           <FormControl
