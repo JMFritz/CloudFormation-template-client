@@ -1,6 +1,7 @@
 .Home .lander {
-  padding: 80px 0;
+  padding: 40px 20px;
   text-align: center;
+  background: rgba(255,255,255, 0.6);
 }
 
 .Home .lander h1 {
@@ -12,13 +13,14 @@
   color: #999;
 }
 
-.Home .templates h4 {
+.Home .templates h4,h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   overflow: hidden;
   line-height: 1.5;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: center;
 }
 .Home .templates p {
   color: #666;
@@ -29,4 +31,29 @@
 }
 .Home .lander div a:first-child {
   margin-right: 20px;
+}
+
+.Home .jumbotron {
+  background-image: url("../images/grid-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Home .template {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+}
+
+.Home .addTemplate {
+  width: 30rem;
+  margin: 1%
+}
+
+.Home .templateList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }

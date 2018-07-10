@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PageHeader, ListGroup, ListGroupItem } from "react-bootstrap";
+import { PageHeader, ListGroup, ListGroupItem, Jumbotron } from "react-bootstrap";
 import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import "./styles/Home.css";
@@ -41,6 +41,7 @@ export default class Home extends Component {
               key={template.templateId}
               href={`/templates/${template.templateId}`}
               onClick={this.handleNoteClick}
+              className="template"
               header={template.content.trim().split("\n")[0]}
             >
               {"Created: " + new Date(template.createdAt).toLocaleString()}
@@ -48,6 +49,7 @@ export default class Home extends Component {
           : <ListGroupItem
               key="new"
               href="/templates/new"
+              className="template"
               onClick={this.handleNoteClick}
             >
               <h4>
@@ -64,26 +66,28 @@ export default class Home extends Component {
 
   renderLander() {
     return (
-      <div className="lander">
-        <h1>CloudFormation Bin</h1>
-        <p>Track and visualize virtual environment templates</p>
-        <div>
-          <Link to="/login" className="btn btn-info btn-lg">
-            Login
-          </Link>
-          <Link to="/signup" className="btn btn-success btn-lg">
-            Signup
-          </Link>
+      <Jumbotron className="jumbotron">
+        <div className="lander">
+          <h1>CloudFormation Bin</h1>
+          <p><strong>Track and visualize virtual environment templates</strong></p>
+          <div>
+            <Link to="/login" className="btn btn-info btn-lg">
+              Login
+            </Link>
+            <Link to="/signup" className="btn btn-success btn-lg">
+              Signup
+            </Link>
+          </div>
         </div>
-      </div>
+      </Jumbotron>
     );
   }
 
   renderTemplates() {
     return (
       <div className="templates">
-        <PageHeader>Your Templates</PageHeader>
-        <ListGroup>
+        <PageHeader>Virtual Environments</PageHeader>
+        <ListGroup className="templateList">
           {!this.state.isLoading && this.renderTemplatesList(this.state.templates)}
         </ListGroup>
       </div>
