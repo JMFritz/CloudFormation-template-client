@@ -1,7 +1,19 @@
 .App {
   margin-top: 15px;
 }
-
+.App .navbar{
+  background-color: inherit;
+  border-color: #2F2F97;
+}
 .App .navbar-brand {
   font-weight: bold;
+  color: white;
+  margin: .3rem;
+  letter-spacing: 1px;
 }
+.App .navbar-default .navbar-nav > li > a {
+   color: white;
+   border: white 1px solid;
+   margin: .3rem;
+   letter-spacing: 1px;
+ }

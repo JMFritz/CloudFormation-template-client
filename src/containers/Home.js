@@ -69,16 +69,8 @@ export default class Home extends Component {
       <div className="homePage">
         <Jumbotron className="jumbotron">
           <div className="lander">
-            <h1>CloudFormation Bin</h1>
-            <p><strong>Track and visualize virtual environment templates</strong></p>
-            <div>
-              <Link to="/login" className="btn btn-info btn-lg">
-                Login
-              </Link>
-              <Link to="/signup" className="btn btn-success btn-lg">
-                Signup
-              </Link>
-            </div>
+            <p><strong>Store and visualize virtual environment templates</strong></p>
+
           </div>
         </Jumbotron>
         <div className="content">

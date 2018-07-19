@@ -1,16 +1,24 @@
 .Home .lander {
   padding: 40px 20px;
   text-align: center;
-  background: rgba(255,255,255, 0.6);
+  background: #2F2F97;
 }
 
 .Home .lander h1 {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
 }
 
 .Home .lander p {
-  color: #999;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.Home .lander a {
+  color: #2F2F97;
+  background-color: white;
+  border: solid white 1px;
+  padding: 1rem;
 }
 
 .Home. .homePage {
@@ -38,9 +46,8 @@
 }
 
 .Home .jumbotron {
-  background-image: url("../images/grid-background.png");
-  /* background-repeat: no-repeat; */
   background-size: contain;
+  background-color: #2F2F97;
 }
 
 .Home .content {
