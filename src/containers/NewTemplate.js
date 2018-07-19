@@ -90,11 +90,11 @@ export default class NewTemplate extends Component {
             />
           </FormGroup>
           <FormGroup controlId="file">
-            <ControlLabel>Attachment</ControlLabel>
+            <ControlLabel>Template</ControlLabel>
             <FormControl onChange={this.handleFileChange} type="file" />
           </FormGroup>
           <FormGroup controlId="diagram">
-            <ControlLabel>Diagram</ControlLabel>
+            <ControlLabel>Environment Visual</ControlLabel>
             <FormControl onChange={this.handleDiagramChange} type="file" />
           </FormGroup>
           <LoaderButton

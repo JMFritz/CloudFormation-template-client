@@ -157,7 +157,7 @@ export default class Templates extends Component {
             <div className="diagramFile">
               {this.state.template.diagram &&
                 <FormGroup>
-                  <ControlLabel>Environment Diagram</ControlLabel>
+                  <ControlLabel className="diagramTitle">Environment Visual</ControlLabel>
                   <FormControl.Static>
                     <a
                       target="_blank"
@@ -208,7 +208,7 @@ export default class Templates extends Component {
           <div className="optionButtons">
             <LoaderButton
               block
-              bsStyle="primary"
+              bsStyle="success"
               disabled={!this.validateForm()}
               type="submit"
               isLoading={this.state.isLoading}

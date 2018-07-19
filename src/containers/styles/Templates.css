@@ -75,3 +75,12 @@
 input[type=file] {
     margin: 0 auto;
 }
+
+.Templates .diagramTitle {
+  color: black;
+  font-size: 3rem;
+}
+
+.Templates .diagramFile a {
+  color: white;
+}

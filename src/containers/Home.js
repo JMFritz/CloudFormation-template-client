@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PageHeader, ListGroup, ListGroupItem, Jumbotron, Row, Grid, Col } from "react-bootstrap";
+import { PageHeader, ListGroup, ListGroupItem, Jumbotron, Row, Grid, Col, Thumbnail } from "react-bootstrap";
 import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import "./styles/Home.css";
@@ -41,7 +41,7 @@ export default class Home extends Component {
               key={template.templateId}
               href={`/templates/${template.templateId}`}
               onClick={this.handleNoteClick}
-              className="template"
+              className={"template" + i}
               header={template.content.trim().split("\n")[0]}
             >
               {"Created: " + new Date(template.createdAt).toLocaleString()}
@@ -49,7 +49,7 @@ export default class Home extends Component {
           : <ListGroupItem
               key="new"
               href="/templates/new"
-              className="template"
+              className="newtemplate"
               onClick={this.handleNoteClick}
             >
               <h4>
@@ -70,15 +70,28 @@ export default class Home extends Component {
         <Jumbotron className="jumbotron">
           <div className="lander">
             <p><strong>Store and visualize virtual environment templates</strong></p>
-
           </div>
         </Jumbotron>
+        <div className="thumbnail-wrapper">
+            <Thumbnail src={ require('./images/list-template-example.png') } alt="template example" className="thumbnails">
+              <p>Create, store, and access multiple virtual environments</p>
+            </Thumbnail>
+            <Thumbnail src={ require('./images/template-example.png') } alt="list of templates" className="thumbnails">
+              <p>Reference, update, and document each virtual environment individually</p>
+            </Thumbnail>
+        </div>
         <div className="content">
-          <div className="more">
-            more info
-          </div>
           <div className="about">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h3>About the Site</h3>
+            <p>After learning about the power of CloudFormation and infrastructure as code, I noticed how difficult it may be for someone to view the YAML/JSON file and truly understand how the environment is connected. I began searching for web applications that would help a user visualize all the moving parts of a CloudFormation template, and came across <em>CloudCraft</em>.  The diagrams that I put together using CloudCraft helped me with my understanding of the key components that go into cloud infrastructure.</p>
+            <p>By utlizing the <em>Serverless Framework</em> to build an API and <em>ReactJS</em> to build the user interface, I was able to create a simple web app where you can store your CloudFormation templates, diagrams, and any notes on the environment. A user can view the diagram, upload a revised template, and take notes for better understanding for each individual "template" object they create.</p>
+            <div className="builtWith">
+              <h4>Built with:</h4>
+              <img src={ require('./images/aws-logo4.png') } />
+              <img src={ require('./images/cloudcraft-logo.svg') } />
+              <img src={ require('./images/react-logo.png') } />
+              <img src={ require('./images/serverless-logo.png') } />
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +101,7 @@ export default class Home extends Component {
   renderTemplates() {
     return (
       <div className="templates">
-        <PageHeader>Virtual Environments</PageHeader>
+        <PageHeader>Your Virtual Environments</PageHeader>
         <ListGroup className="templateList">
           {!this.state.isLoading && this.renderTemplatesList(this.state.templates)}
         </ListGroup>

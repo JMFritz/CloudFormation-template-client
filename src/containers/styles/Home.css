@@ -1,7 +1,11 @@
 .Home .lander {
   padding: 40px 20px;
   text-align: center;
-  background: #2F2F97;
+  background: #3178D0;
+  background-image: url("../images/white-cloud.png");
+  background-position: 50% 180%;
+  background-repeat: no-repeat;
+  height: 450px;
 }
 
 .Home .lander h1 {
@@ -12,30 +16,53 @@
 .Home .lander p {
   color: white;
   letter-spacing: 2px;
+  font-size: 30px;
 }
 
 .Home .lander a {
-  color: #2F2F97;
+  /* color: #2F2F97; */
   background-color: white;
   border: solid white 1px;
   padding: 1rem;
+}
+.Home .about img {
+  padding: 1rem;
+  /* margin: .5rem; */
+  height: 5rem;
+}
+.Home .panel-default {
+  height: 80px;
+  width: 60%;
 }
 
 .Home. .homePage {
   width: 100%;
 }
 
-.Home .templates h4,h1 {
-  font-family: "Open Sans", sans-serif;
+.Home .templates h4, h1 {
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
+  letter-spacing: 1px;
   overflow: hidden;
   line-height: 1.5;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: center;
+  color: black;
 }
+
+.Home .templates h1{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
 .Home .templates p {
-  color: #666;
+  color: black;
+}
+.Home .about em {
+  font-weight: bold;
+  color: #3178D0;
 }
 
 .Home .lander div {
@@ -47,7 +74,9 @@
 
 .Home .jumbotron {
   background-size: contain;
-  background-color: #2F2F97;
+  background-color: #3178D0;
+  /* margin-bottom: 300px; */
+  height: 50%;
 }
 
 .Home .content {
@@ -56,35 +85,120 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  background: white;
 }
 .Home .about {
-  border: 2px solid red;
-  height: 20rem;
   width: 70rem;
   margin: .5rem;
-  text-align: center;
+  /* text-align: center; */
   padding: 2rem;
+  color: dimgrey;
 }
-.Home .more {
-  border: 2px solid green;
+.Home .aboutTitle {
   height: 20rem;
   width: 20rem;
   margin: .5rem;
   flex-grow: 1;
   text-align: center;
-  padding: 2rem;
+  /* padding: 2rem; */
+  color: black;
 }
 
-.Home .template {
+.Home .template1 {
   width: 30rem;
   height: 10rem;
   margin: .5rem;
   padding: 2rem;
+  background-color: #FF9999;
+  border-color: #FF9999;
 }
-
-.Home .addTemplate {
+.Home .template2 {
   width: 30rem;
-  margin: 1%
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #CCFFCC;
+  border-color: #CCFFCC;
+}
+.Home .template3 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #FFFF99;
+  border-color: #FFFF99;
+}
+.Home .template4 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #FFCC99;
+  border-color: #FFCC99;
+}
+.Home .template5 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #CC99FF;
+  border-color: #CC99FF;
+}
+.Home .template6 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #FF9999;
+  border-color: #FF9999;
+}
+.Home .template7 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #CCFFCC;
+  border-color: #CCFFCC;
+}
+.Home .template8 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #FFFF99;
+  border-color: #FFFF99;
+}
+.Home .template9 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #FFCC99;
+  border-color: #FFCC99;
+}
+.Home .template10 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #CC99FF;
+  border-color: #CC99FF;
+}
+.Home .template11 {
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: #FF9999;
+  border-color: #FF9999;
+}
+.Home .newtemplate{
+  width: 30rem;
+  height: 10rem;
+  margin: .5rem;
+  padding: 2rem;
+  background-color: white;
+  border-color: white;
 }
 
 .Home .templateList {
@@ -96,4 +210,19 @@
 
 .Home .column1, .column2{
   border: 2px solid black;
+}
+.Home .thumbnail-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Home .thumbnails{
+  width: 40%;
+  margin: 10px;
+  background: white;
+  text-align: center;
+  border-color: #3178D0;
+}
+.Home .thumbnails p, h4{
+  color: dimgrey;
 }
