@@ -74,10 +74,10 @@ export default class Home extends Component {
         </Jumbotron>
         <div className="thumbnail-wrapper">
             <Thumbnail src={ require('./images/list-template-example.png') } alt="template example" className="thumbnails">
-              <p>Create, store, and access multiple virtual environments</p>
+              <h4>Create, store, and access multiple virtual environments</h4>
             </Thumbnail>
             <Thumbnail src={ require('./images/template-example.png') } alt="list of templates" className="thumbnails">
-              <p>Reference, update, and document each virtual environment individually</p>
+              <h4>Reference, update, and document each virtual environment individually</h4>
             </Thumbnail>
         </div>
         <div className="content">
@@ -87,10 +87,10 @@ export default class Home extends Component {
             <p>By utlizing the <em>Serverless Framework</em> to build an API and <em>ReactJS</em> to build the user interface, I was able to create a simple web app where you can store your CloudFormation templates, diagrams, and any notes on the environment. A user can view the diagram, upload a revised template, and take notes for better understanding for each individual "template" object they create.</p>
             <div className="builtWith">
               <h4>Built with:</h4>
+              <img src={ require('./images/serverless-logo.png') } />
+              <img src={ require('./images/react-logo.png') } />
               <img src={ require('./images/aws-logo4.png') } />
               <img src={ require('./images/cloudcraft-logo.svg') } />
-              <img src={ require('./images/react-logo.png') } />
-              <img src={ require('./images/serverless-logo.png') } />
             </div>
           </div>
         </div>

@@ -3,9 +3,9 @@
   text-align: center;
   background: #3178D0;
   background-image: url("../images/white-cloud.png");
-  background-position: 50% 180%;
+  background-position: 50% 190%;
   background-repeat: no-repeat;
-  height: 450px;
+  height: 400px;
 }
 
 .Home .lander h1 {
@@ -215,9 +215,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 .Home .thumbnails{
-  width: 40%;
+  width: 30%;
   margin: 10px;
   background: white;
   text-align: center;
