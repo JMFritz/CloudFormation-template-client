@@ -157,7 +157,7 @@ export default class Templates extends Component {
             <div className="diagramFile">
               {this.state.template.diagram &&
                 <FormGroup>
-                  <ControlLabel className="diagramTitle">Environment Visual</ControlLabel>
+                  <ControlLabel className="diagramTitle">Environment</ControlLabel>
                   <FormControl.Static>
                     <a
                       target="_blank"

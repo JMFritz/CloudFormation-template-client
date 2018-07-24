@@ -103,6 +103,9 @@
   /* padding: 2rem; */
   color: black;
 }
+.Home .about h3{
+  text-align: center;
+}
 
 .Home .template1 {
   width: 30rem;
@@ -226,4 +229,37 @@
 }
 .Home .thumbnails p, h4{
   color: dimgrey;
+}
+
+@media only screen and (max-width: 500px) {
+  .Home .lander p {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+  .Home .lander {
+    padding: 40px 20px;
+    text-align: center;
+    background: #3178D0;
+    background-image: url("../images/white-cloud-small.png");
+    background-position: 50% 130%;
+    background-repeat: no-repeat;
+    height: 20rem;
+  }
+  .Home .thumbnails h4{
+    font-size: 3vw;
+  }
+  .Home .thumbnails{
+    width: 40%;
+    margin: 10px;
+    background: white;
+    text-align: center;
+    border-color: #3178D0;
+  }
+  .Home .about p{
+    font-size: 3vw;
+  }
+  .Home .templates .page-header h1{
+    font-size: 5vw;
+  }
 }
